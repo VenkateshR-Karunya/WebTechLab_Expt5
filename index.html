@@ -3,81 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Green Thumb Journal - Garden Tools</title>
+<title>The Green Thumb Journal - Garden Toolkit</title>
 <link rel="stylesheet" href="garden-tools.css">
 </head>
 <body>
 
 <header>
   <h1>The Green Thumb Journal</h1>
-  <p>Little interactive tools for the garden</p>
+  <p>A few little tools we've built for fellow gardeners</p>
 </header>
 
 <main>
 
-  <section class="tool">
-    <h2>Word Analyzer</h2>
-    <input type="text" id="wordInput" value="Water Sunlight Soil Compost Mulch">
-    <button id="analyzeBtn">Analyze</button>
-    <p>Shortest: <span id="shortest"></span></p>
-    <p>Longest: <span id="longest"></span></p>
+  <p class="page-intro">Try these out while you're planning your next post or your next planting bed.</p>
+
+  <section>
+    <h2>📝 Journal Entry Word Checker</h2>
+    <p class="intro-line">Paste a line from your post and see which word is doing the most, and the least, work.</p>
+    <div class="control">
+      <input type="text" id="wordInput" value="The tomatoes are finally ripening after weeks of steady watering.">
+      <button id="analyzeBtn">Check Words</button>
+    </div>
+    <p class="result">Shortest word: <span id="shortest">-</span> &nbsp; Longest word: <span id="longest">-</span></p>
   </section>
 
-  <section class="tool">
-    <h2>Plant Growth Calculator</h2>
-    <input type="number" id="weight" placeholder="Weight (kg)">
-    <input type="number" id="height" placeholder="Height (m)">
-    <button id="calcBtn">Calculate</button>
-    <p>Growth Index: <span id="score"></span></p>
-    <p>Status: <span id="type"></span></p>
+  <section>
+    <h2>🪴 Compost Ratio Calculator</h2>
+    <p class="intro-line">Weigh out your greens and browns to see if your pile needs adjusting.</p>
+    <div class="control">
+      <label>Green material (kg) <input type="number" id="green" value="2"></label>
+      <label>Brown material (kg) <input type="number" id="brown" value="5"></label>
+      <button id="compostBtn">Check Balance</button>
+    </div>
+    <p class="result">Ratio: <span id="ratio">-</span> &nbsp; <span id="balance"></span></p>
   </section>
 
-  <section class="tool">
-    <h2>Garden Bed Planter</h2>
-    <input type="number" id="rows" placeholder="Rows" min="1" value="3">
-    <input type="number" id="cols" placeholder="Columns" min="1" value="5">
-    <button id="plantBtn">Plant Garden</button>
+  <section>
+    <h2>🌱 Garden Bed Planter</h2>
+    <p class="intro-line">Lay out a quick planting grid and see what comes up.</p>
+    <div class="control">
+      <label>Rows <input type="number" id="rows" min="1" value="3"></label>
+      <label>Columns <input type="number" id="cols" min="1" value="5"></label>
+      <button id="plantBtn">Plant Garden</button>
+    </div>
     <div id="garden"></div>
   </section>
 
-  <section class="tool">
-    <h2>Garden Shop Currency Converter</h2>
-    <input type="number" id="amount" placeholder="Amount" value="100">
-    <select id="from">
-      <option value="INR">Rupees</option>
-      <option value="USD">Dollars</option>
-    </select>
-    <select id="to">
-      <option value="USD">Dollars</option>
-      <option value="INR">Rupees</option>
-    </select>
-    <button id="convertBtn">Convert</button>
-    <p><span id="answer"></span></p>
+  <section>
+    <h2>💱 Shop Price Converter</h2>
+    <p class="intro-line">Reading from abroad? Convert our seed and tool prices between Rupees and Dollars.</p>
+    <div class="control">
+      <input type="number" id="amount" value="500">
+      <select id="from">
+        <option value="INR">Rupees</option>
+        <option value="USD">Dollars</option>
+      </select>
+      <select id="to">
+        <option value="USD">Dollars</option>
+        <option value="INR">Rupees</option>
+      </select>
+      <button id="convertBtn">Convert</button>
+    </div>
+    <p class="result" id="answer"></p>
   </section>
 
-  <section class="tool">
-    <h2>Sunny or Rainy?</h2>
-    <div id="coin">☀️</div>
-    <button id="flip">Flip!</button>
-    <p>Sunny: <span id="num_heads">0</span> Rainy: <span id="num_tails">0</span></p>
+  <section>
+    <h2>💧 Should I Water Today?</h2>
+    <p class="intro-line">Can't decide? Let the journal decide for you.</p>
+    <div class="control">
+      <div id="coin">🌤️</div>
+      <button id="flip">Flip!</button>
+    </div>
+    <p class="result">Watered: <span id="num_heads">0</span> &nbsp; Skipped: <span id="num_tails">0</span></p>
   </section>
 
-  <section class="tool">
-    <h2>Seed Kit Order Form</h2>
-    <label><input type="radio" name="kit" value="100" checked> Starter Kit (0.5kg) - Rs.100</label>
-    <label><input type="radio" name="kit" value="200"> Standard Kit (1kg) - Rs.200</label>
-    <label><input type="radio" name="kit" value="400"> Deluxe Kit (2kg) - Rs.400</label>
-    <label><input type="radio" name="tip" value="10" checked> 10% tip</label>
-    <label><input type="radio" name="tip" value="15"> 15% tip</label>
-    <label><input type="radio" name="tip" value="20"> 20% tip</label>
-    <button id="orderBtn">Calculate Order</button>
-    <p>Total: Rs.<span id="price"></span></p>
+  <section>
+    <h2>🎁 Seed Kit Order Form</h2>
+    <p class="intro-line">Order a starter kit for the season and add a tip for our delivery gardeners.</p>
+    <div class="control">
+      <label><input type="radio" name="kit" value="100" checked> Starter (0.5kg) - Rs.100</label>
+      <label><input type="radio" name="kit" value="200"> Standard (1kg) - Rs.200</label>
+      <label><input type="radio" name="kit" value="400"> Deluxe (2kg) - Rs.400</label>
+      <br>
+      <label><input type="radio" name="tip" value="10" checked> 10% tip</label>
+      <label><input type="radio" name="tip" value="15"> 15% tip</label>
+      <label><input type="radio" name="tip" value="20"> 20% tip</label>
+      <br>
+      <button id="orderBtn">Calculate Order</button>
+    </div>
+    <p class="result">Total: Rs.<span id="price">-</span></p>
   </section>
 
 </main>
 
 <footer>
-  <p>&copy; 2026 Experiment 5 by URK24CS1117</p>
+  <p>&copy; 2026 The Green Thumb Journal</p>
 </footer>
 
 <script src="garden-tools.js"></script>
