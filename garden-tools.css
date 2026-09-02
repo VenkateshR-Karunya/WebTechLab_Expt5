@@ -1,0 +1,95 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Verdana, sans-serif;
+  background-color: #eef7ee;
+  color: #2f3e2f;
+}
+
+header {
+  background-color: #3f7d3f;
+  color: #ffffff;
+  text-align: center;
+  padding: 25px;
+}
+
+header h1 {
+  margin: 0 0 8px;
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
+main {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.tool {
+  background-color: #ffffff;
+  border-left: 6px solid #3f7d3f;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.tool h2 {
+  color: #3f7d3f;
+  margin-top: 0;
+  font-size: 18px;
+  border-bottom: 2px solid #3f7d3f;
+  padding-bottom: 6px;
+}
+
+.tool input,
+.tool select {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 6px 8px;
+  border: 1px solid #b5cdb5;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.tool label {
+  display: block;
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.tool button {
+  background-color: #3f7d3f;
+  color: #ffffff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.tool button:hover {
+  background-color: #2f5f2f;
+}
+
+#garden {
+  margin-top: 10px;
+  font-size: 28px;
+  line-height: 1.4;
+}
+
+#coin {
+  font-size: 48px;
+  text-align: center;
+}
+
+footer {
+  background-color: #2f5f2f;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+}

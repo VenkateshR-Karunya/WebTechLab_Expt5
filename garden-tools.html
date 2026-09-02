@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Green Thumb Journal - Garden Tools</title>
+<link rel="stylesheet" href="garden-tools.css">
+</head>
+<body>
+
+<header>
+  <h1>The Green Thumb Journal</h1>
+  <p>Little interactive tools for the garden</p>
+</header>
+
+<main>
+
+  <section class="tool">
+    <h2>Word Analyzer</h2>
+    <input type="text" id="wordInput" value="Water Sunlight Soil Compost Mulch">
+    <button id="analyzeBtn">Analyze</button>
+    <p>Shortest: <span id="shortest"></span></p>
+    <p>Longest: <span id="longest"></span></p>
+  </section>
+
+  <section class="tool">
+    <h2>Plant Growth Calculator</h2>
+    <input type="number" id="weight" placeholder="Weight (kg)">
+    <input type="number" id="height" placeholder="Height (m)">
+    <button id="calcBtn">Calculate</button>
+    <p>Growth Index: <span id="score"></span></p>
+    <p>Status: <span id="type"></span></p>
+  </section>
+
+  <section class="tool">
+    <h2>Garden Bed Planter</h2>
+    <input type="number" id="rows" placeholder="Rows" min="1" value="3">
+    <input type="number" id="cols" placeholder="Columns" min="1" value="5">
+    <button id="plantBtn">Plant Garden</button>
+    <div id="garden"></div>
+  </section>
+
+  <section class="tool">
+    <h2>Garden Shop Currency Converter</h2>
+    <input type="number" id="amount" placeholder="Amount" value="100">
+    <select id="from">
+      <option value="INR">Rupees</option>
+      <option value="USD">Dollars</option>
+    </select>
+    <select id="to">
+      <option value="USD">Dollars</option>
+      <option value="INR">Rupees</option>
+    </select>
+    <button id="convertBtn">Convert</button>
+    <p><span id="answer"></span></p>
+  </section>
+
+  <section class="tool">
+    <h2>Sunny or Rainy?</h2>
+    <div id="coin">☀️</div>
+    <button id="flip">Flip!</button>
+    <p>Sunny: <span id="num_heads">0</span> Rainy: <span id="num_tails">0</span></p>
+  </section>
+
+  <section class="tool">
+    <h2>Seed Kit Order Form</h2>
+    <label><input type="radio" name="kit" value="100" checked> Starter Kit (0.5kg) - Rs.100</label>
+    <label><input type="radio" name="kit" value="200"> Standard Kit (1kg) - Rs.200</label>
+    <label><input type="radio" name="kit" value="400"> Deluxe Kit (2kg) - Rs.400</label>
+    <label><input type="radio" name="tip" value="10" checked> 10% tip</label>
+    <label><input type="radio" name="tip" value="15"> 15% tip</label>
+    <label><input type="radio" name="tip" value="20"> 20% tip</label>
+    <button id="orderBtn">Calculate Order</button>
+    <p>Total: Rs.<span id="price"></span></p>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Experiment 5 by URK24CS1117</p>
+</footer>
+
+<script src="garden-tools.js"></script>
+</body>
+</html>
